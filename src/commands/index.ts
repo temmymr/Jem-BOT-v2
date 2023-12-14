@@ -1,7 +1,7 @@
 import * as ping from "./ping";
-import * as meatHonor from "./meat-honor";
+import * as meat from "./meat";
 
 export const commands = {
   ping,
-  meatHonor,
+  meat,
 };
