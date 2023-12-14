@@ -1,7 +1,7 @@
 export const MEAT90 = 5 as number;
 export const MEAT95 = 10 as number;
 export const MEAT150 = 20 as number;
-export const MEAT200 = 200 as number;
+export const MEAT200 = 20 as number;
 
 export const HONOR90 = 260 as number;
 export const HONOR95 = 910 as number;
