@@ -75,8 +75,10 @@ Day 2 \t▫ ${(HONOR_DAY2 * 1000).toLocaleString("id-ID")} honors ▫ ${DAY2.toL
 Day 3 \t▫ ${(HONOR_DAY3 * 1000).toLocaleString("id-ID")} honors ▫ ${DAY3.toLocaleString("id-ID")} meats
 Day 4 \t▫ ${(honorDay4 * 1000).toLocaleString("id-ID")} honors ▫ ${day4.toLocaleString("id-ID")} meats\`\`\` 
         **Total** ▫ **${(honorTotalInit * 1000).toLocaleString("id-ID")}** honors ▫ **${(meatInterludeInit + 3000).toLocaleString("id-ID")}** meats"
-        `
+        `,
+        inline : true,
         })
+        .setTimestamp()
         .setFooter({
             text: `Assumption get 30m honor and 3k meats in prelim ${meatInterludeInit + 3000 < 10000 ? "\n**Disarankan untuk tetap farm meat lebih dari 10k atau @aimen marah**" : ""}`
         });
