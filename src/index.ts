@@ -4,7 +4,6 @@ import { config } from "./config";
 import { commands } from "./commands";
 import { deployCommands } from "./deploy-commands";
 
-
 export const client = new Client({
     intents: ["Guilds", "GuildMessages", "DirectMessages", "MessageContent"],
 });
@@ -35,12 +34,33 @@ client.on("messageCreate", async (message) => {
             await deployCommands({ guildId: message.guildId });
             await message.reply("Reloaded commands!");
         }
+        if (commandName === "clear_guild" && message.author.id === config.DISCORD_OWNER_ID && message.guildId) {
+            const commands = await client.guilds.cache.get(message.guildId)?.commands.fetch();
+            if (!commands) {
+                return;
+            }
+            commands.forEach(async (command) => {
+                await command.delete();
+            });
+            
+            await message.reply("Cleared guild commands!");
+        }
+
+        if (commandName === "clear_global" && message.author.id === config.DISCORD_OWNER_ID && message.guildId) {
+            const commands = await client.application?.commands.fetch();
+            if (!commands) {
+                return;
+            }
+            commands.forEach(async (command) => {
+                await command.delete();
+            });
+            
+            await message.reply("Cleared global commands!");
+        }
     }
 });
 
 client.login(config.DISCORD_TOKEN);
-
-// make the bot keep alive in replit using module javascript
 
 http
     .createServer((_, res) => {

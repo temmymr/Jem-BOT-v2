@@ -23,11 +23,11 @@ export async function execute(interaction: CommandInteraction) {
             return;
         }
 
-        const NM90 = totalMeat / MEAT90;
-        const NM95 = totalMeat / MEAT95;
-        const NM100 = totalMeat / MEAT150;
-        const NM150 = totalMeat / MEAT150;
-        const NM200 = totalMeat / MEAT200;
+        const NM90 = Math.floor(totalMeat / MEAT90);
+        const NM95 = Math.floor(totalMeat / MEAT95);
+        const NM100 = Math.floor(totalMeat / MEAT150);
+        const NM150 = Math.floor(totalMeat / MEAT150);
+        const NM200 = Math.floor(totalMeat / MEAT200);
 
         const embed = new EmbedBuilder()
             .setTitle("Jem-BOT")

@@ -41,7 +41,7 @@ export async function execute(interaction: CommandInteraction) {
         .setTitle("Toko Sebelah")
         .addFields({
             name: `Main ${mainJam} jam`,
-            value: `Honor yang didapet: **${totalHonorGain.toLocaleString()}**\nMeat yang dibutuhin: **${totalMeatUsed.toLocaleString()}**`,
+            value: `NM: **${nightmare}**\nWaktu clear: **${nmTime}s**\nHonor yang didapet: **${totalHonorGain.toLocaleString()}**\nMeat yang dibutuhin: **${totalMeatUsed.toLocaleString()}**`,
             inline: true,
         });
     await interaction.reply({ embeds: [embed] });
